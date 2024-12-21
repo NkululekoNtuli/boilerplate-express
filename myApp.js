@@ -10,6 +10,11 @@ let app = express();
 
 app.use("/public", express.static(__dirname + "/public"));
 
+app.use(function(req, res, next){
+    consol/log(req.method, req.path, "-", rep.ip);
+    next();
+});
+
 app.get ("/",  function(rep, res){
     absolutePath = __dirname + "/views/index.html";
     res.send(absolutePath);
