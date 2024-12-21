@@ -14,6 +14,9 @@ app.get ("/",  function(rep, res){
     res.send(absolutePath);
 });
 
+app.get("/json", function(rep, res){
+    res.json({"message": "json"});
+});
 
 
 
