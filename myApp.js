@@ -25,36 +25,15 @@ app.get("/json", function(rep, res){
     res.json({"message": "Hello json"});
 });
 
+app.get("/now", function(req, res, next){
+    req.time = new Date().toString();
+    res.json({time:req.time});
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.get("/:word/echo", function(req, res){
+    const { word } = req.params;
+    res.json({"echo": word});
+});
 
 
 
